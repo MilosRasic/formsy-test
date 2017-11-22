@@ -1,0 +1,76 @@
+@use postcss-nested;
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+form {
+	width: 400px;
+	background: white;
+	padding: 15px;
+	border: 1px solid black;
+}
+
+.form-group {
+	margin-bottom: 10px;
+
+	&.required {
+		label:after {
+			content: ' *';
+		}
+	}
+
+	label {
+		display: inline-block;
+		max-width: 100%;
+		margin-top: 5px;
+		font-weight: 700;
+	}
+
+	input[type='text'],
+	input[type='email'],
+	input[type='number'],
+	input[type='password'],
+	select {
+		display: block;
+		width: 100%;
+		height: 34px;
+		padding: 6px 12px;
+		font-size: 14px;
+		line-height: 1.42857143;
+		color: #555;
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+}
+
+.validation-error {
+	color: red;
+	margin: 5px 0;
+	display: inline-block;
+}
+
+button {
+	padding: 10px 15px;
+	border-radius: 4px;
+}
+
+.buttons {
+	button {
+		margin-left: 10px;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
